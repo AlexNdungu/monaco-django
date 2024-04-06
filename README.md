@@ -6,7 +6,7 @@
 
 ## Set Up
 
-### 1. Create and Configure A Django Project
+### 1. Create and Configure Django Project
 
 ```
 $ django-admin startproject project_name
@@ -95,7 +95,7 @@ urlpatterns = [
     path('', views.index, name='index'),
 ]
 ```
-### 5. Django - Templates - index.html
+### 5. Django - Templates/index.html
 
 - Create a html file in the Templates folder
 
@@ -126,7 +126,7 @@ urlpatterns = [
     
     <script>
 
-        // This js code initializes the monaco editor onto the domElement > the_editor
+        // This js code initializes the monaco editor onto the domElement == the_editor
 
         var editor = monaco.editor.create(document.getElementById('the_editor'), {
             value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
@@ -166,4 +166,43 @@ Static/node_modules/monaco-editor/README.md
 Static/node_modules/monaco-editor/ThirdPartyNotices.txt
 staticfiles
 
-``
+```
+
+### 7. Monaco Editor - Copy relevant folder into Static folder
+
+- Copy the **Static\node_modules\monaco-editor\min\vs** and paste it into the **Static folder**.
+
+> **Explanation** : **Monaco editor** expect the files in **node_modules\monaco-editor\min\vs** to be available at a path relative to the current page, not relative to the location of the Monaco Editor scripts.
+
+---
+##### ONE LAST THING
+---
+
+### 8. Monaco Editor - vs/ folder url path
+- For Monaco to find the scripts in vs folder, you have to tell it where to look for them.
+
+#### project_name/urls.py
+
+```
+# Add the following lines into project_name/urls.py
+
+from django.views.static import serve
+from django.urls import re_path
+
+urlpatterns = [
+    ...,
+
+    # Now, the files in vs folder will be available for the code editor
+
+    re_path(r'^vs/(?P<path>.*)$', serve, {
+        'document_root': settings.STATIC_ROOT + '/vs',
+    }),
+]
+```
+
+```
+# Dont forget to run the collect static command
+
+$ python manage.py collectstatic
+
+```
