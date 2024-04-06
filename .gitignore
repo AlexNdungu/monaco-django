@@ -3,16 +3,17 @@ editor/migrations/__pycache__/*
 editor/__pycache__/*
 monaco_django/__pycache__/*
 
-Static/Monaco/package-lock.json
-Static/Monaco/package.json
-Static/Monaco/node_modules/.package-lock.json
-Static/Monaco/node_modules/monaco-editor/dev
-Static/Monaco/node_modules/monaco-editor/esm
-Static/Monaco/node_modules/monaco-editor/CHANGELOG.md
-Static/Monaco/node_modules/monaco-editor/LICENSE
-Static/Monaco/node_modules/monaco-editor/monaco.d.ts
-Static/Monaco/node_modules/monaco-editor/package.json
-Static/Monaco/node_modules/monaco-editor/README.md
-Static/Monaco/node_modules/monaco-editor/ThirdPartyNotices.txt
+Static/package-lock.json
+Static/package.json
+Static/node_modules/.package-lock.json
+Static/node_modules/monaco-editor/dev
+Static/node_modules/monaco-editor/esm
+Static/node_modules/monaco-editor/CHANGELOG.md
+Static/node_modules/monaco-editor/LICENSE
+Static/node_modules/monaco-editor/monaco.d.ts
+Static/node_modules/monaco-editor/package.json
+Static/node_modules/monaco-editor/README.md
+Static/node_modules/monaco-editor/ThirdPartyNotices.txt
+staticfiles
 
 db.sqlite3
