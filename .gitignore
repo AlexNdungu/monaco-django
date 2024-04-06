@@ -1,0 +1,5 @@
+editor/migrations/0*
+editor/migrations/__pycache__/*
+editor/__pycache__/*
+monaco_django/__pycache__/*
+db.sqlite3
