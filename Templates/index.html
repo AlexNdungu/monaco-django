@@ -11,16 +11,15 @@
 			data-name="vs/editor/editor.main"
 			href="{% static 'node_modules/monaco-editor/min/vs/editor/editor.main.css' %}"
 	/>
+    <script src="{% static 'node_modules/monaco-editor/min/vs/loader.js' %}"></script>
+    <script src="{% static 'node_modules/monaco-editor/min/vs/editor/editor.main.nls.js' %}"></script>
+    <script src="{% static 'node_modules/monaco-editor/min/vs/editor/editor.main.js' %}"></script>
 </head>
 <body>
 
     
     <div id="the_editor">
     </div>
-    
-    <script src="{% static 'node_modules/monaco-editor/min/vs/loader.js' %}"></script>
-    <script src="{% static 'node_modules/monaco-editor/min/vs/editor/editor.main.nls.js' %}"></script>
-    <script src="{% static 'node_modules/monaco-editor/min/vs/editor/editor.main.js' %}"></script>
     
     <script>
         var editor = monaco.editor.create(document.getElementById('the_editor'), {
