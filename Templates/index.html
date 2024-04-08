@@ -44,6 +44,16 @@
                 console.log(editor.getModel().getLineContent(parseInt(input)));
             }
         });
+
+
+        editor.onDidChangeModelContent(function(e) {
+            e.changes.forEach(change => {
+                if (change.rangeLength > 0) { // If rangeLength is greater than 0, it means lines were deleted
+                    console.log('Line(s) deleted from:', change.range.startLineNumber, 'to', change.range.endLineNumber);
+                }
+            });
+        });
+        
     </script>
     
 </body>
