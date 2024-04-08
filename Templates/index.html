@@ -33,6 +33,18 @@
         <input type="text" id="input" placeholder="Enter line number">
         <button id="btn">Submit</button>
     </div>
+
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            let input = document.getElementById('input').value;
+            if(input == 'all'){
+                console.log(editor.getModel().getValue());
+            }
+            else{
+                console.log(editor.getModel().getLineContent(parseInt(input)));
+            }
+        });
+    </script>
     
 </body>
 </html>
