@@ -24,7 +24,6 @@
     <script>
         var editor = monaco.editor.create(document.getElementById('the_editor'), {
             value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
-            language: 'javascript',
         });
     </script>
 
@@ -53,7 +52,21 @@
                 }
             });
         });
+
+        // geting language from extension
+        function getLanguageByExtension(extension) {
+            var languages = monaco.languages.getLanguages();
+            for (var i = 0; i < languages.length; i++) {
+                if (languages[i].extensions && languages[i].extensions.indexOf(extension) !== -1) {
+                    return languages[i].id;
+                }
+            }
+            return null;
+        }
         
+        var extension = ".js"; // replace with your file extension
+        var language = getLanguageByExtension(extension);
+        monaco.editor.setModelLanguage(editor.getModel(), language);
     </script>
     
 </body>
